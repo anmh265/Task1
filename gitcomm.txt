@@ -1,0 +1,49 @@
+Git is used to save a copy of the project in a systematic manner using versions. It is a version control system.
+Git is a distributed version control system. i.e It brings a copy of the work to each user's systems. So there is a backup in every system.
+Git commands:
+init - used to create local repositories    git init
+
+add - used to add files to staging area.    git add filename
+
+ignore - can be used to avoid some files to not get committed
+
+commit - used to reflect the file on staging area to the repository     git commit
+
+log - used to view the commit history   git log
+snapshot - each instance of commit is a snapshot
+
+status - to know the track of each work in git  git status
+
+head - a reference to the most recent commit in the recent branch
+
+reset - brings the head to any commit. all commits after the new head is deleted. a destuctive command
+
+branch - used to add features to any commit in between
+
+checkout - used to move the head to any of the commits without deleting any
+
+merge - used to combine the sub branch with the main branch     git merge
+
+Conflict - when merging sometimes git will not be able to do it automatically which creates error. this is conflict. we need to manually resolve the Conflict
+cherry-pick - used to add some feattures of sub branch to the main branch
+
+diff - used to identify difference between 2 commits. in case of branches it tells the difference between the heads of the branches
+
+Collabortion 
+clone - provides a link of the repository to all users. basically creates a copy of a project
+
+push - add changes to server   git push
+
+pull - retrieve files from server
+
+When pushing to maain branch some files may have bugs which gets included in main branch. So we make a clone to which a branch is added for features. Then a 
+request is made to server to merge with main server. This reuest is called pull request.
+
+fetch - used to fecth changes from server side to client side
+git fetch  -changes in server side is updated in client side tracking branch
+fetch & merge together is called pull
+
+git rebase 
+after bug fixing in branches, if we merge both branches git creates a new merge commit which willbe having multiple parent branch.
+to avoid this we use rebase
+we replace the branch to the head of the main branch
