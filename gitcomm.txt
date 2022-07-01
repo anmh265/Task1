@@ -47,3 +47,6 @@ git rebase
 after bug fixing in branches, if we merge both branches git creates a new merge commit which willbe having multiple parent branch.
 to avoid this we use rebase
 we replace the branch to the head of the main branch
+
+to create ssh key
+ssh-keygen -C "anmh265@gmail.com"
