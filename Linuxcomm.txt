@@ -1,0 +1,108 @@
+whoami - to display the user
+man -  for manual
+clear -  to clear the screen
+pwd - print working directory
+ls - list all files     ls -a - list all hidden files
+cd - change directory   cd / - to roor directory    cd ~ -to home directory
+mkdir - makes a directory
+touch - makes a files
+rmdir - deletes a directory or file(empty ons)
+rm - deletes file   rm -r file/directory name - deletes all recursive files
+open - opens a file     open filename
+mv - movees a file
+cp - copies a file
+
+head - displays the top 10 contents in a file by default   
+tail - displays bottom 10 contents in a file by default 
+
+date - prints the present date and time
+To move output of a command to a file we use '>'    date > file.txt This command updates each time
+>> appends to a file
+cat - displays the contents of a file   cat note.txt
+cat note1.tx note2.txt - displays the appended data from both files
+
+less - shows contents of a file in interactive way
+
+echo - prints the arguments passed to it     echo 'Hello' prints Hello 
+
+wc - gives the line count, word count and size
+Piping(|) - used to pass output of a command to the input of another command
+ls -l | wc
+
+sort - to sort the contents of a file. by default sorts alphabetically
+sort -n - sorts numerically
+
+uniq - for sorting lines of text. only adjacent duplicate values are ignored
+
+Match path names - '*', ???, {}
+ls -l *.txt displays list files with .txt extension
+echo *.??? shows any file with extension having three characters
+echo {a,b,c}.txt  - creates all combinations of a,b and c with .txt / creates a.txt b.txt c.txt
+
+diff - tells the difference between two files   diff note1.txt note2.txt
+
+find - used to find files or folder matching a particular criteria
+find . -name '7' looks for all files with name 7
+find . type d -name '*E' -looks for directory with E in directory name
+find type d -size +100k -size -1M looks for file with size between 100k and 1M
+
+grep - used to search in contents of a file
+grep The note.txt  - searches for 'The' inside note.txt    -n gives line no.   
+
+du - calculates size of directory
+df - gives disk usage information
+history - displays history
+ps - gives the running processes
+
+top - used to list process running in real time
+kill - used to terminate a running process
+killall - used to kill multiplee processes
+
+jobs - we can set a program to run in background using '&'. but for multiple programs we need job number. we use job command to get that
+fg - runs the suspended prograam in the foreground.
+bg - runs it in the background
+
+gzip - compresses  file     gzip note.txt -compresses a file
+gzip -k note.txt -creates a new compressed file(note.txt.gz)    gzip -d note.txt.gz -decompresses
+gunzip - used for decompressing
+
+tar - used to create archive by groupung multiple files into a single file
+tar -cf archive.tar file1 file2  -c to create archive, f to write files into archive
+To unarchive    tar -xf archive.tar
+To compress archived file   tar -czf archive.tar file1 file2
+
+nano - text editr that can be opened from terminal      nano note.txt will  enter into contents f note.txt
+alias - we can provide alias for any commands using this keword     alias myls = 'ls -a' will make myls perform same task as ls -adjacent
+
+xargs - used to convert standard iputs types to arguments
+commands like rm doesn't accept standard inputs.
+cat note.txt | rm  - will not work as rm doesn't accept standard inputs but only arguments. so we use xargs
+cat note.txt | xargs rm will work
+
+ln - used to create links(pointer to another file)
+ln note1.txt note2.txt - note2.txt will point to note1.txt. this is hard link. cannot create hard links to directories
+ln -s will create soft links. when original file is deleted soft link will not work
+
+who - dispalys all users logged
+su - allows to switch between users
+sudo - used to run a command as root
+passwd - change password
+
+chown - used to change the owner to another user    
+chown user file
+-R - recursively allows to change owner of directory or file or sub files
+chown owner:group file - changes the group owner
+
+ls -l gives a list of files. first column denotes the type
+--rw-rw--R
+first character denotes the file type   
+- regular file, d directory, c character special file, l symbolic link
+r read, w write, x execute permissions
+
+chmod - used to alter permissions
+First specify 'who' using values: u user, g group, o others, a allNext we specify 'what' we are doing using characters: - removes permission, + grants, 
+= sets permission for a particular one and removes others
+Last we specify 'which' values: r read, w write, x execute
+file.txt    -rw-r--r--
+chmod g + w file.txt    -rw-rw-r--
+chmod go + w file.txt
